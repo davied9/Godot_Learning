@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "WaterMelon",
+"language": "GDScript",
+"path": "res://watermelon.gd"
+} ]
+_global_script_class_icons={
+"WaterMelon": ""
+}
+
+[application]
+
+config/name="FruitNinja"
+run/main_scene="res://background.tscn"
+config/icon="res://icon.png"
+
+[layer_names]
+
+2d_render/layer_1="fruits"
+2d_physics/layer_1="fruit"
+2d_render/layer_2="player"
+2d_physics/layer_2="player"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

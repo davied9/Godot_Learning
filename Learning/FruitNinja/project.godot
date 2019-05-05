@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "WaterMelon",
 "language": "GDScript",
 "path": "res://watermelon.gd"
+}, {
+"base": "RigidBody2D",
+"class": "WaterMelonSlice",
+"language": "GDScript",
+"path": "res://watermelon_slice.gd"
 } ]
 _global_script_class_icons={
-"WaterMelon": ""
+"WaterMelon": "",
+"WaterMelonSlice": ""
 }
 
 [application]

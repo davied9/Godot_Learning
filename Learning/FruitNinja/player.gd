@@ -48,6 +48,7 @@ func _physics_process(delta):
 				var collider = r['collider']
 				var m = collider as WaterMelon
 				if null != m and m.is_in_group("fruits"):
+					m.set_state('cut')
 					m.free()
 			add_attack_position(attack_position, delta)
 		else:

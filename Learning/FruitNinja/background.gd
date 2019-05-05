@@ -35,10 +35,12 @@ func _process(delta):
 		apply_random_start_state(node)
 		self.add_child(node)
 	for c in self.get_children():
-		var cc = c as WaterMelon
-#		if c.position.y > 650:
-#			cc.output_debug_info = true
 		if c.position.y > 700:
 			self.remove_child(c)
-			cc.set_state("out_of_sight")
-			cc.free()
+			var cc = c as WaterMelon
+			if null != cc:
+				cc.set_state("out_of_sight")
+				cc.free()
+			var ccs = c as WaterMelonSlice
+			if null != ccs:
+				ccs.free()

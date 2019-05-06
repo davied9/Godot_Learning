@@ -21,10 +21,11 @@ func _ready():
 	pass # Replace with function body.
 
 func _draw():
-	var center = Vector2(WIDTH/2, HEIGHT/2)
-	var bottom = Vector2(WIDTH/2, HEIGHT)
-	draw_line(center-Vector2(100, 0), center+Vector2(100, 0), Color(1,0,0), 8)
-	draw_line(bottom-Vector2(400, 0), bottom+Vector2(400, 0), Color(1,0,0), 8)
+#	var center = Vector2(WIDTH/2, HEIGHT/2)
+#	var bottom = Vector2(WIDTH/2, HEIGHT)
+#	draw_line(center-Vector2(100, 0), center+Vector2(100, 0), Color(1,0,0), 8)
+#	draw_line(bottom-Vector2(400, 0), bottom+Vector2(400, 0), Color(1,0,0), 8)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

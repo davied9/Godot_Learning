@@ -5,6 +5,7 @@ const LINE_WIDTH = 10
 const LINE_COLOR = Color(1,0,0,0.5)
 const LAST_TIME = 0.1
 const INIT_POS = Vector2(-1111, -1111)
+const MIN_DIST_AVAIL = 15
 var slice = []
 var last_press_pos = INIT_POS
 
@@ -29,7 +30,7 @@ func is_new_attack_position_available(new_attack_position):
 	if 0 == len(slice):
 		return true
 	var distance = (slice[-1]['position'] - new_attack_position).length()
-	if distance > 30:
+	if distance > MIN_DIST_AVAIL:
 		return true
 	else:
 		return false

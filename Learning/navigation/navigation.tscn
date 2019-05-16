@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://navigation.gd" type="Script" id=1]
+[ext_resource path="res://path.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://agent.png" type="Texture" id=4]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 665, 214.5, 717, 143.5, 723, 431.5, 659, 384.5, 500, 385.5, 324, 459.5, 428, 399.5, 291, 151.5, 518, 206.5, 447, 223.5, 350, 219.5, 361, 280.5, 361, 344.5, 437, 335.5, 376, 399.5, 446, 264.5 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2, 5, 6 ), PoolIntArray( 7, 1, 0, 8 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 5, 7, 10, 11, 12 ), PoolIntArray( 13, 8, 4, 6 ), PoolIntArray( 14, 6, 5 ), PoolIntArray( 15, 9, 8 ), PoolIntArray( 15, 8, 13 ), PoolIntArray( 11, 15, 13, 12 ), PoolIntArray( 5, 12, 14 ) ]
+outlines = [ PoolVector2Array( 518, 206.5, 500, 385.5, 659, 384.5, 665, 214.5 ), PoolVector2Array( 291, 151.5, 717, 143.5, 723, 431.5, 324, 459.5 ), PoolVector2Array( 350, 219.5, 447, 223.5, 446, 264.5, 361, 280.5 ), PoolVector2Array( 361, 344.5, 437, 335.5, 428, 399.5, 376, 399.5 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="Navigation2D" type="Navigation2D"]
+script = ExtResource( 1 )
+
+[node name="path" type="Sprite" parent="."]
+position = Vector2( 516, 304.5 )
+scale = Vector2( 2.01141, 1.83249 )
+texture = ExtResource( 2 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="."]
+position = Vector2( 0, -0.857376 )
+navpoly = SubResource( 1 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 512, 167 )
+
+[node name="icon" type="Sprite" parent="RigidBody2D"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 2 )
+
+[node name="agent" type="RigidBody2D" parent="."]
+position = Vector2( 300, 170 )
+
+[node name="agent_sprite" type="Sprite" parent="agent"]
+scale = Vector2( 0.6, 0.74026 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="agent"]
+scale = Vector2( 1.7, 2.2 )
+shape = SubResource( 3 )
+
+[node name="new_agent" type="KinematicBody2D" parent="."]
+position = Vector2( 512, 400 )
+
+[node name="icon2" type="Sprite" parent="new_agent"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="new_agent"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 2 )
+

@@ -12,7 +12,7 @@ func apply_random_start_state(fruit):
 	var start_point = Vector2(1024*randf(), HEIGHT + 100) #Vector2(-256 + 1536*randf(), 900)
 	var target_point = Vector2(256 + 512*randf(), 300)
 	var shot_direction = (target_point - start_point).normalized()
-	var move_speed = 300 + 100 * randf()
+	var move_speed = 700 + 100 * randf()
 	fruit.position = start_point
 	fruit.linear_velocity = move_speed * shot_direction
 	fruit.angular_velocity = 3 + 1 * randf()
@@ -40,8 +40,7 @@ func _process(delta):
 			self.remove_child(c)
 			var cc = c as WaterMelon
 			if null != cc:
-				cc.set_state("out_of_sight")
-				cc.free()
+				cc.set_state("out_of_sight") # WaterMelon will call queue_free inside
 			var ccs = c as WaterMelonSlice
 			if null != ccs:
 				ccs.free()

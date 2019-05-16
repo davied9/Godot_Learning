@@ -12,8 +12,8 @@ func set_state(new_state):
 	state = new_state
 	if 'cut' == state:
 		create_slices()
-#	if 'out_of_sight' == state:
-#		self.free()
+	if 'out_of_sight' == state:
+		self.queue_free()
 
 func get_state():
 	return state

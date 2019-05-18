@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ground.png" type="Texture" id=1]
+[ext_resource path="res://hole.png" type="Texture" id=2]
+[ext_resource path="res://wall.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 30 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" type="Sprite" parent="."]
+position = Vector2( 50, 50 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="hole" type="Sprite" parent="."]
+position = Vector2( 240, 50 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="hole"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hole/StaticBody2D3"]
+shape = SubResource( 1 )
+
+[node name="Wall" type="Sprite" parent="."]
+position = Vector2( 150, 50 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D2"]
+shape = SubResource( 1 )
+

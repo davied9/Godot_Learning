@@ -1,0 +1,37 @@
+*
+!*/
+.*/
+
+!.git*
+/.git/
+
+# godot
+!project.godot
+!*.tscn
+!*.tres
+.import/
+*.import
+
+# scripts
+!*.gd
+
+# resources
+!*.zip
+
+# images
+!*.png
+!*.jpg
+
+# sound / music
+!*.wav
+
+# fonts
+!*.ttf
+
+# informations (license, readme, ...)
+!*.txt
+
+# others
+!*.ogg
+!.DS_Store
+

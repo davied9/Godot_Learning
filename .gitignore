@@ -2,8 +2,11 @@
 !*/
 .*/
 
+# git
 !.git*
 /.git/
+![rR][eE][aA][dD][mM][eE].[mM][dD]
+![rR][eE][aA][dD][mM][eE].[tT][xX][tT]
 
 # godot
 !project.godot
